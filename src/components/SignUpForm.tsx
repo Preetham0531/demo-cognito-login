@@ -87,7 +87,7 @@ export const SignUpForm = () => {
   if (submitted) {
     return (
       <div className="w-full bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
-        <div className="bg-gradient-to-r from-green-500 to-emerald-600 px-8 py-6">
+        <div className="px-8 py-6 border-b border-gray-200">
           <div className="flex items-center justify-center">
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg">
               <svg className="w-10 h-10 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -33,11 +33,11 @@ export const MFAInput = ({ onSubmit, email, error }: MFAInputProps) => {
   };
 
   return (
-      <div className="w-full bg-white rounded-lg shadow-md border border-gray-200">
-        <div className="px-8 py-6 border-b border-gray-200">
-          <h1 className="text-2xl font-bold text-gray-900 text-center">Two-Factor Authentication</h1>
-          <p className="text-gray-600 text-center mt-1 text-sm">Enter the code sent to your device</p>
-        </div>
+    <div className="w-full bg-white rounded-lg shadow-md border border-gray-200">
+      <div className="px-8 py-6 border-b border-gray-200">
+        <h1 className="text-2xl font-bold text-gray-900 text-center">Two-Factor Authentication</h1>
+        <p className="text-gray-600 text-center mt-1 text-sm">Enter the code sent to your device</p>
+      </div>
 
       <div className="p-8">
         <p className="text-gray-600 mb-6 text-center">
