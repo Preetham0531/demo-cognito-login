@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { signUp } from '../services/cognitoAuth';
 import { validateEmail, validatePassword, validatePhone } from '../utils/validation';
 import { ErrorMessage } from './ErrorMessage';
-import { LoadingSpinner } from './LoadingSpinner';
 
 export const SignUpForm = () => {
   const [formData, setFormData] = useState({

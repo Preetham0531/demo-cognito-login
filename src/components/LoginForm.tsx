@@ -3,7 +3,6 @@ import { useNavigate, Link } from 'react-router-dom';
 import { login, respondToMfaChallenge } from '../services/cognitoAuth';
 import { validateEmail } from '../utils/validation';
 import { ErrorMessage } from './ErrorMessage';
-import { LoadingSpinner } from './LoadingSpinner';
 import { GoogleSignInButton } from './GoogleSignInButton';
 import { MFAInput } from './MFAInput';
 

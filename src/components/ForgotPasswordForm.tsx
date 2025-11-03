@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { forgotPassword, confirmForgotPassword, loginAfterPasswordReset } from '../services/cognitoAuth';
 import { validateEmail, validatePassword } from '../utils/validation';
 import { ErrorMessage } from './ErrorMessage';
-import { LoadingSpinner } from './LoadingSpinner';
 
 type Step = 'email' | 'code' | 'success';
 
