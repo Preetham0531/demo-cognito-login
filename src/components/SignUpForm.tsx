@@ -86,24 +86,17 @@ export const SignUpForm = () => {
 
   if (submitted) {
     return (
-      <div className="w-full bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
+      <div className="w-full bg-white rounded-lg shadow-md border border-gray-200">
         <div className="px-8 py-6 border-b border-gray-200">
-          <div className="flex items-center justify-center">
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg">
-              <svg className="w-10 h-10 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-          </div>
+          <h2 className="text-2xl font-bold text-gray-900 text-center">Account Created!</h2>
         </div>
         <div className="p-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-3 mt-4">Account Created!</h2>
-          <p className="text-gray-600 mb-8 text-lg">
+          <p className="text-gray-600 mb-6">
             Please check your email to verify your account before signing in.
           </p>
           <Link
             to="/login"
-            className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
+            className="inline-block bg-blue-600 text-white py-2 px-6 rounded-md font-medium hover:bg-blue-700 transition-colors"
           >
             Go to Login
           </Link>
