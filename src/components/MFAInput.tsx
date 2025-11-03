@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { ErrorMessage } from './ErrorMessage';
-import { LoadingSpinner } from './LoadingSpinner';
 
 interface MFAInputProps {
   onSubmit: (code: string) => Promise<void>;
