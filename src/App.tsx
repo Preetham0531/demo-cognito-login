@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
+import { ConfigError } from './components/ConfigError';
 import { LoginPage } from './pages/LoginPage';
 import { SignUpPage } from './pages/SignUpPage';
 import { ForgotPasswordPage } from './pages/ForgotPasswordPage';
@@ -7,6 +8,15 @@ import { SuccessPage } from './pages/SuccessPage';
 import { OAuthCallbackPage } from './pages/OAuthCallbackPage';
 
 function App() {
+  // Check for required environment variables
+  const hasRequiredConfig = 
+    import.meta.env.VITE_COGNITO_USER_POOL_ID && 
+    import.meta.env.VITE_COGNITO_APP_CLIENT_ID;
+
+  if (!hasRequiredConfig) {
+    return <ConfigError />;
+  }
+
   return (
     <AuthProvider>
       <Router>

@@ -16,18 +16,24 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<CognitoUser | null>(null);
 
   const checkAuth = () => {
-    const cognitoUser = userPool.getCurrentUser();
-    if (cognitoUser) {
-      cognitoUser.getSession((err: any, session: any) => {
-        if (err || !session.isValid()) {
-          setIsAuthenticated(false);
-          setUser(null);
-        } else {
-          setIsAuthenticated(true);
-          setUser(cognitoUser);
-        }
-      });
-    } else {
+    try {
+      const cognitoUser = userPool.getCurrentUser();
+      if (cognitoUser) {
+        cognitoUser.getSession((err: any, session: any) => {
+          if (err || !session?.isValid()) {
+            setIsAuthenticated(false);
+            setUser(null);
+          } else {
+            setIsAuthenticated(true);
+            setUser(cognitoUser);
+          }
+        });
+      } else {
+        setIsAuthenticated(false);
+        setUser(null);
+      }
+    } catch (error) {
+      // If Cognito is not configured, just set unauthenticated
       setIsAuthenticated(false);
       setUser(null);
     }
