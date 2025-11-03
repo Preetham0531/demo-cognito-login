@@ -80,10 +80,10 @@ export const ForgotPasswordForm = () => {
 
   if (step === 'email') {
     return (
-      <div className="w-full bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
-        <div className="bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-4">
-          <h1 className="text-2xl font-bold text-white text-center">Reset Password</h1>
-          <p className="text-cyan-100 text-center mt-1 text-sm">Enter your email to receive a reset code</p>
+      <div className="w-full bg-white rounded-lg shadow-md border border-gray-200">
+        <div className="px-8 py-6 border-b border-gray-200">
+          <h1 className="text-2xl font-bold text-gray-900 text-center">Reset Password</h1>
+          <p className="text-gray-600 text-center mt-1 text-sm">Enter your email to receive a reset code</p>
         </div>
 
         <div className="p-8">
@@ -92,22 +92,15 @@ export const ForgotPasswordForm = () => {
               <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
                 Email Address
               </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
-                  </svg>
-                </div>
-                <input
-                  id="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all outline-none"
-                  placeholder="you@example.com"
-                  required
-                />
-              </div>
+              <input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none"
+                placeholder="you@example.com"
+                required
+              />
               <ErrorMessage message={errors.email || ''} />
             </div>
 
@@ -140,10 +133,10 @@ export const ForgotPasswordForm = () => {
 
   if (step === 'code') {
     return (
-      <div className="w-full bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
-        <div className="bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-4">
-          <h1 className="text-2xl font-bold text-white text-center">Verify & Reset</h1>
-          <p className="text-cyan-100 text-center mt-1 text-sm">Enter code and new password</p>
+      <div className="w-full bg-white rounded-lg shadow-md border border-gray-200">
+        <div className="px-8 py-6 border-b border-gray-200">
+          <h1 className="text-2xl font-bold text-gray-900 text-center">Verify & Reset</h1>
+          <p className="text-gray-600 text-center mt-1 text-sm">Enter code and new password</p>
         </div>
 
         <div className="p-8">
@@ -164,7 +157,7 @@ export const ForgotPasswordForm = () => {
                 maxLength={6}
                 value={code}
                 onChange={(e) => setCode(e.target.value.replace(/\D/g, ''))}
-                className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 text-center text-3xl tracking-[0.5em] font-mono font-bold transition-all outline-none"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 text-center text-xl tracking-widest font-mono outline-none"
                 placeholder="000000"
                 required
               />
@@ -175,22 +168,15 @@ export const ForgotPasswordForm = () => {
               <label htmlFor="password" className="block text-sm font-semibold text-gray-700 mb-2">
                 New Password
               </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
-                </div>
-                <input
-                  id="password"
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all outline-none"
-                  placeholder="Create new password"
-                  required
-                />
-              </div>
+              <input
+                id="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none"
+                placeholder="Create new password"
+                required
+              />
               <ErrorMessage message={errors.password || ''} />
               <p className="text-xs text-gray-500 mt-2 ml-1">
                 Must be at least 8 characters with uppercase, lowercase, number, and special character
@@ -201,22 +187,15 @@ export const ForgotPasswordForm = () => {
               <label htmlFor="confirmPassword" className="block text-sm font-semibold text-gray-700 mb-2">
                 Confirm New Password
               </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-                <input
-                  id="confirmPassword"
-                  type="password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all outline-none"
-                  placeholder="Re-enter new password"
-                  required
-                />
-              </div>
+              <input
+                id="confirmPassword"
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 outline-none"
+                placeholder="Re-enter new password"
+                required
+              />
               <ErrorMessage message={errors.confirmPassword || ''} />
             </div>
 
@@ -225,16 +204,9 @@ export const ForgotPasswordForm = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-cyan-600 text-white py-2.5 px-4 rounded-lg font-medium hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
+              className="w-full bg-cyan-600 text-white py-2 px-4 rounded-md font-medium hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
-              {loading ? (
-                <>
-                  <LoadingSpinner size="sm" />
-                  <span>Resetting Password...</span>
-                </>
-              ) : (
-                'Reset Password'
-              )}
+              {loading ? 'Resetting Password...' : 'Reset Password'}
             </button>
           </form>
 
@@ -252,16 +224,11 @@ export const ForgotPasswordForm = () => {
 
   if (step === 'success') {
     return (
-      <div className="w-full bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
-        <div className="bg-gradient-to-r from-green-500 to-emerald-600 px-6 py-4">
-          <h2 className="text-2xl font-bold text-white text-center">Password Reset!</h2>
+      <div className="w-full bg-white rounded-lg shadow-md border border-gray-200">
+        <div className="px-8 py-6 border-b border-gray-200">
+          <h2 className="text-2xl font-bold text-gray-900 text-center">Password Reset!</h2>
         </div>
         <div className="p-8 text-center">
-          <div className="mb-4 flex justify-center">
-            <svg className="h-12 w-12 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
           <p className="text-gray-600 mb-2">Your password has been successfully reset.</p>
           <p className="text-sm text-gray-500">Redirecting you to login...</p>
         </div>
